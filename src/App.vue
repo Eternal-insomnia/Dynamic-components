@@ -1,17 +1,20 @@
 <script>
 import Vfor from "./components/V-for.vue"
 import Vif from "./components/V-if.vue"
+import Vshow from "./components/V-show.vue"
 
 export default {
   components: {
     Vfor,
-    Vif
+    Vif,
+    Vshow
   }
 }
 </script>
 
 <template>
-  Добрый день!
+  <p>Добрый день!</p><br>
   <!-- <Vfor/> -->
-  <Vif/>
+  <!-- <Vif/> -->
+  <Vshow/>
 </template>
