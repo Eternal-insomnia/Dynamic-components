@@ -14,7 +14,7 @@
 </script>
 
 <template>
-  <p>V-for is here! </p>
+  <p>V-for здесь!</p>
   <ul>
     <li v-for="task in tasks" :key="task.id">
       {{ task.name }}

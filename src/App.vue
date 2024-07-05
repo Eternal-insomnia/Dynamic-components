@@ -1,14 +1,17 @@
 <script>
 import Vfor from "./components/V-for.vue"
+import Vif from "./components/V-if.vue"
 
 export default {
   components: {
-    Vfor
+    Vfor,
+    Vif
   }
 }
 </script>
 
 <template>
-  Hello there!
-  <Vfor />
+  Добрый день!
+  <!-- <Vfor/> -->
+  <Vif/>
 </template>
