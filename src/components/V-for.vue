@@ -1,3 +1,23 @@
+<script>
+  export default {
+    data() {
+      return {
+        tasks: [
+          {id: 1, name: "Task 1"},
+          {id: 2, name: "Task 2"},
+          {id: 3, name: "Task 3"},
+          {id: 4, name: "Task 4"}
+        ]
+      }
+    }
+  }
+</script>
+
 <template>
-    V-for is here!
+  <p>V-for is here! </p>
+  <ul>
+    <li v-for="task in tasks" :key="task.id">
+      {{ task.name }}
+    </li>
+  </ul>
 </template>
