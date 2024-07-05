@@ -1,17 +1,19 @@
 <script>
+import Computed from "./components/Computed.vue"
+import Created from "./components/Created.vue"
+import Data from "./components/Data.vue"
 import Vfor from "./components/V-for.vue"
 import Vif from "./components/V-if.vue"
 import Vshow from "./components/V-show.vue"
-import Created from "./components/Created.vue"
-import Computed from "./components/Computed.vue"
 
 export default {
   components: {
+    Computed,
+    Created,
+    Data,
     Vfor,
     Vif,
-    Vshow,
-    Created,
-    Computed
+    Vshow
   },
   data() {
     return {
@@ -28,5 +30,6 @@ export default {
   <!-- <Vshow/> -->
   <!-- <Created @response="(msg) => childMsg = msg"/>
   <p>{{ childMsg }}</p> -->
-  <Computed/>
+  <!-- <Computed/> -->
+  <Data/>
 </template>
