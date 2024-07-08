@@ -5,6 +5,7 @@ import Data from "./components/Data.vue"
 import Mounted from "./components/Mounted.vue"
 import Vfor from "./components/V-for.vue"
 import Vif from "./components/V-if.vue"
+import Vmodel from "./components/V-model.vue"
 import Vshow from "./components/V-show.vue"
 
 export default {
@@ -15,6 +16,7 @@ export default {
     Mounted,
     Vfor,
     Vif,
+    Vmodel,
     Vshow
   },
   data() {
@@ -31,8 +33,9 @@ export default {
   <!-- <Created @response="(msg) => childMsg = msg"/>
   <p>{{ childMsg }}</p> -->
   <!-- <Data/> -->
+  <!-- <Mounted/> -->
   <!-- <Vfor/> -->
   <!-- <Vif/> -->
   <!-- <Vshow/> -->
-  <Mounted/>
+  <Vmodel/>
 </template>
