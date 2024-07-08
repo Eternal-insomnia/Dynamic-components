@@ -2,6 +2,7 @@
 import Computed from "./components/Computed.vue"
 import Created from "./components/Created.vue"
 import Data from "./components/Data.vue"
+import Methods from "./components/Methods.vue"
 import Mounted from "./components/Mounted.vue"
 import Vfor from "./components/V-for.vue"
 import Vif from "./components/V-if.vue"
@@ -13,6 +14,7 @@ export default {
     Computed,
     Created,
     Data,
+    Methods,
     Mounted,
     Vfor,
     Vif,
@@ -36,6 +38,7 @@ export default {
   <!-- <Mounted/> -->
   <!-- <Vfor/> -->
   <!-- <Vif/> -->
+  <!-- <Vmodel/> -->
   <!-- <Vshow/> -->
-  <Vmodel/>
+  <Methods/>
 </template>
