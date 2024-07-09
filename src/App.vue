@@ -3,6 +3,7 @@ import Computed from "./components/Computed.vue"
 import Created from "./components/Created.vue"
 import Data from "./components/Data.vue"
 import Events from "./components/Events.vue" 
+import JsonImport from "./components/JsonImport.vue"
 import Methods from "./components/Methods.vue"
 import Mounted from "./components/Mounted.vue"
 import Vfor from "./components/V-for.vue"
@@ -17,6 +18,7 @@ export default {
     Created,
     Data,
     Events,
+    JsonImport,
     Methods,
     Mounted,
     Vfor,
@@ -39,7 +41,8 @@ export default {
   <!-- <Created @response="(msg) => childMsg = msg"/>
   <p>{{ childMsg }}</p> -->
   <!-- <Data/> -->
-  <Events/>
+  <!-- <Events/> -->
+  <JsonImport/>
   <!-- <Methods/> -->
   <!-- <Mounted/> -->
   <!-- <Vfor/> -->
