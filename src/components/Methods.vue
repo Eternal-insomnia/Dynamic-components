@@ -1,4 +1,5 @@
 <template>
+  <p>Methods здесь!</p><br>
   <input v-model="message" placeholder="Введите что-нибудь"><br>
   <p>Ваше "что-нибудь":</p><br>
   <p v-if="message==''" style="color: #bbb;">Вы ничего не написали</p>

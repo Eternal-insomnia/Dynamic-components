@@ -1,4 +1,5 @@
 <template>
+  <p>JSON import здесь!</p><br>
   <p>Импортированный JSON-файл:</p><br>
   <ul>
     <li v-for="task in taskList">
