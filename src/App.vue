@@ -8,6 +8,7 @@ import Vfor from "./components/V-for.vue"
 import Vif from "./components/V-if.vue"
 import Vmodel from "./components/V-model.vue"
 import Vshow from "./components/V-show.vue"
+import Watch from "./components/Watch.vue"
 
 export default {
   components: {
@@ -19,7 +20,8 @@ export default {
     Vfor,
     Vif,
     Vmodel,
-    Vshow
+    Vshow,
+    Watch
   },
   data() {
     return {
@@ -35,10 +37,11 @@ export default {
   <!-- <Created @response="(msg) => childMsg = msg"/>
   <p>{{ childMsg }}</p> -->
   <!-- <Data/> -->
+  <!-- <Methods/> -->
   <!-- <Mounted/> -->
   <!-- <Vfor/> -->
   <!-- <Vif/> -->
   <!-- <Vmodel/> -->
   <!-- <Vshow/> -->
-  <Methods/>
+  <Watch/>
 </template>
