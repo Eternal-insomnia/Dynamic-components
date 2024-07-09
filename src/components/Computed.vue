@@ -1,3 +1,26 @@
+<template>
+  <p>Computed здесь!</p>
+  <p>Ваша библиотека:</p><br>
+  <ul>
+    <li v-for="book in filteredLibrary">
+      <input type="checkbox" v-model="book.done">
+      <span :class="{ done: book.done }"> {{ book.name }}, {{ book.author }}</span>
+      <button @click="removeBook(book)">X</button>
+    </li>
+  </ul><br>
+  <button @click="hideRead = !hideRead">
+    {{ hideRead ? 'Показать все книги' : 'Скрыть прочинанные' }}
+  </button>
+
+  <br><br>
+  
+  <form @submit.prevent="addBook">
+    <input v-model="bookName" required placeholder="книга"><br>
+    <input v-model="bookAuthor" required placeholder="автор"><br>
+    <button>Добавить книгу</button>
+  </form>
+</template>
+
 <script>
 export default {
   data() {
@@ -31,29 +54,6 @@ export default {
   }
 }
 </script>
-
-<template>
-  <p>Computed здесь!</p>
-  <p>Ваша библиотека:</p><br>
-  <ul>
-    <li v-for="book in filteredLibrary">
-      <input type="checkbox" v-model="book.done">
-      <span :class="{ done: book.done }"> {{ book.name }}, {{ book.author }}</span>
-      <button @click="removeBook(book)">X</button>
-    </li>
-  </ul><br>
-  <button @click="hideRead = !hideRead">
-    {{ hideRead ? 'Показать все книги' : 'Скрыть прочинанные' }}
-  </button>
-
-  <br><br>
-  
-  <form @submit.prevent="addBook">
-    <input v-model="bookName" required placeholder="книга"><br>
-    <input v-model="bookAuthor" required placeholder="автор"><br>
-    <button>Добавить книгу</button>
-  </form>
-</template>
 
 <style>
 .read {

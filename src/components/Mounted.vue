@@ -1,3 +1,8 @@
+<template>
+  <p>Mounted здесь!</p><br>
+  <p ref="pElementRef">Не смонтировано</p>
+</template>
+
 <script>
 export default {
   mounted() {
@@ -5,8 +10,3 @@ export default {
   }
 }
 </script>
-
-<template>
-  <p>Mounted здесь!</p><br>
-  <p ref="pElementRef">Не смонтировано</p>
-</template>

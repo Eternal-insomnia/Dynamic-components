@@ -1,3 +1,20 @@
+<template>
+  <p>Добрый день!</p><br>
+  <!-- <Computed/> -->
+  <!-- <Created @response="(msg) => childMsg = msg"/>
+  <p>{{ childMsg }}</p> -->
+  <!-- <Data/> -->
+  <!-- <Events/> -->
+  <JsonImport/>
+  <!-- <Methods/> -->
+  <!-- <Mounted/> -->
+  <!-- <Vfor/> -->
+  <!-- <Vif/> -->
+  <!-- <Vmodel/> -->
+  <!-- <Vshow/> -->
+  <!-- <Watch/> -->
+</template>
+
 <script>
 import Computed from "./components/Computed.vue"
 import Created from "./components/Created.vue"
@@ -34,20 +51,3 @@ export default {
   }
 }
 </script>
-
-<template>
-  <p>Добрый день!</p><br>
-  <!-- <Computed/> -->
-  <!-- <Created @response="(msg) => childMsg = msg"/>
-  <p>{{ childMsg }}</p> -->
-  <!-- <Data/> -->
-  <!-- <Events/> -->
-  <JsonImport/>
-  <!-- <Methods/> -->
-  <!-- <Mounted/> -->
-  <!-- <Vfor/> -->
-  <!-- <Vif/> -->
-  <!-- <Vmodel/> -->
-  <!-- <Vshow/> -->
-  <!-- <Watch/> -->
-</template>

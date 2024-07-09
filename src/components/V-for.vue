@@ -1,3 +1,12 @@
+<template>
+  <p>V-for здесь!</p>
+  <ul>
+    <li v-for="task in tasks" :key="task.id">
+      {{ task.name }}
+    </li>
+  </ul>
+</template>
+
 <script>
   export default {
     data() {
@@ -12,12 +21,3 @@
     }
   }
 </script>
-
-<template>
-  <p>V-for здесь!</p>
-  <ul>
-    <li v-for="task in tasks" :key="task.id">
-      {{ task.name }}
-    </li>
-  </ul>
-</template>

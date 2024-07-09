@@ -1,3 +1,10 @@
+<template>
+  <p>Ваше число:</p>
+  <p>{{ number }}</p>
+  <button @click="increment()">Увеличить</button>
+  <button @click="number--">Уменьшить</button>
+</template>
+
 <script>
 export default {
   data() {
@@ -12,10 +19,3 @@ export default {
   }
 }
 </script>
-
-<template>
-  <p>Ваше число:</p>
-  <p>{{ number }}</p>
-  <button @click="increment()">Увеличить</button>
-  <button @click="number--">Уменьшить</button>
-</template>

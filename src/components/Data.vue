@@ -1,3 +1,8 @@
+<template>
+  <p>Data здесь!</p><br>
+  {{ message }}
+</template>
+
 <script>
 export default {
   data() {
@@ -7,8 +12,3 @@ export default {
   }
 }
 </script>
-
-<template>
-  <p>Data здесь!</p><br>
-  {{ message }}
-</template>
