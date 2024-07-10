@@ -1,5 +1,7 @@
 <template>
   <p>Events здесь!</p><br>
+
+  <!-- @CLICK -->
   <p>Ваше число:</p>
   <p>{{ number }}</p>
   <button @click="increment()">Увеличить</button>
@@ -10,12 +12,14 @@
 
   <br><br>
   
+  <!-- @INPUT -->
   <input @input="(event) => message = event.target.value" placeholder="Введите что-нибудь"><br>
   <p v-if="message==''">Тут пусто...</p>
   <p v-else>{{ message }}</p>
   
   <br><br>
   
+  <!-- @CHANGE -->
   <select @change="selected">
     <option value="" selected disabled>Выберите</option>
     <option value="A">A</option>
@@ -26,17 +30,20 @@
 
   <br><br>
 
+  <!-- @KEYDOWN -->
   <p :class="keyDownClass">Введите текст и нажмите Enter</p><br>
   <input @keydown.enter="enterKeyDown">
   
   <br><br>
 
+  <!-- @PASTE -->
   <p>Вы можете вставить сюда текст из буфера обмена:</p><br>
   <textarea @paste="onPaste"></textarea><br>
   <p>{{ pastedText }}</p>
 
   <br><br>
 
+  <!-- @MOUSEOVER and @MOUSELEAVE-->
   <p :class="coolTextClass" @mouseover="coolTextChange" @mouseleave="coolTextChange">{{ coolText }}</p>
 </template>
 
@@ -81,8 +88,8 @@ export default {
 
 <style>
 .keyDown {
-  color: green;
-  background: greenyellow;
+  color: #006700;
+  background: #adff2f;
 }
 
 .mouseOver {
@@ -90,7 +97,7 @@ export default {
   background: #651b1b;
 }
 .mouseLeave {
-  color:rgb(0, 174, 255);
-  background: rgb(0, 65, 103);
+  color: #00aeff;
+  background: #004167;
 }
 </style>
