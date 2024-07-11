@@ -4,10 +4,11 @@
   <!-- <Created @response="(msg) => childMsg = msg"/>
   <p>{{ childMsg }}</p> -->
   <!-- <Data/> -->
-  <Events/>
+  <!-- <Events/> -->
   <!-- <JsonImport/> -->
   <!-- <Methods/> -->
   <!-- <Mounted/> -->
+  <TodoList/>
   <!-- <Vfor/> -->
   <!-- <Vif/> -->
   <!-- <Vmodel/> -->
@@ -23,6 +24,7 @@ import Events from "./components/Events.vue"
 import JsonImport from "./components/JsonImport.vue"
 import Methods from "./components/Methods.vue"
 import Mounted from "./components/Mounted.vue"
+import TodoList from "./components/TodoList.vue"
 import Vfor from "./components/V-for.vue"
 import Vif from "./components/V-if.vue"
 import Vmodel from "./components/V-model.vue"
@@ -38,6 +40,7 @@ export default {
     JsonImport,
     Methods,
     Mounted,
+    TodoList,
     Vfor,
     Vif,
     Vmodel,
