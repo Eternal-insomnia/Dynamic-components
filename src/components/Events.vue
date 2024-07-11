@@ -86,7 +86,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .keyDown {
   color: #006700;
   background: #adff2f;

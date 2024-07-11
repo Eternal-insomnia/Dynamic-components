@@ -3,12 +3,13 @@
   <!-- <Computed/> -->
   <!-- <Created @response="(msg) => childMsg = msg"/>
   <p>{{ childMsg }}</p> -->
+  <CustomSelect/>
   <!-- <Data/> -->
   <!-- <Events/> -->
   <!-- <JsonImport/> -->
   <!-- <Methods/> -->
   <!-- <Mounted/> -->
-  <TodoList/>
+  <!-- <TodoList/> -->
   <!-- <Vfor/> -->
   <!-- <Vif/> -->
   <!-- <Vmodel/> -->
@@ -19,6 +20,7 @@
 <script>
 import Computed from "./components/Computed.vue"
 import Created from "./components/Created.vue"
+import CustomSelect from "./components/CustomSelection.vue"
 import Data from "./components/Data.vue"
 import Events from "./components/Events.vue" 
 import JsonImport from "./components/JsonImport.vue"
@@ -35,6 +37,7 @@ export default {
   components: {
     Computed,
     Created,
+    CustomSelect,
     Data,
     Events,
     JsonImport,
