@@ -1,3 +1,7 @@
+<template>
+  <p>Created здесь!</p>
+</template>
+
 <script>
 export default {
   data() {
