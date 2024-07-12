@@ -2,20 +2,20 @@
   <div class="computed-application">
     <p>Computed здесь!</p>
     <p>Ваша библиотека:</p>
-    <ul>
-      <li v-for="book in filteredLibrary">
+    <ul class="book-list">
+      <li class="book" v-for="book in filteredLibrary">
         <input type="checkbox" v-model="book.done">
-        <span :class="{ done: book.done }"> {{ book.name }}, {{ book.author }}</span>
+        <span>{{ book.name }}, {{ book.author }}</span>
         <button @click="removeBook(book)">X</button>
       </li>
     </ul>
     <button @click="hideRead = !hideRead">
       {{ hideRead ? 'Показать все книги' : 'Скрыть прочинанные книги' }}
     </button>
-    <form @submit.prevent="addBook">
-      <input v-model="bookName" required placeholder="книга">
-      <input v-model="bookAuthor" required placeholder="автор">
-      <button>Добавить книгу</button>
+    <form class="book-form" @submit.prevent="addBook">
+      <input v-model="bookName" required placeholder="книга"><br>
+      <input v-model="bookAuthor" required placeholder="автор"><br>
+      <button type="submit">Добавить книгу</button>
     </form>
   </div>
 </template>
@@ -55,7 +55,29 @@ export default {
 </script>
 
 <style scoped>
-.read {
-  text-decoration: line-through;
+.book {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.book-form {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.book-list {
+  width: 100%;
+  padding-left: 0px;
+  list-style-type: none;
+}
+.computed-application {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 </style>

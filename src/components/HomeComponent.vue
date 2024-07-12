@@ -1,12 +1,11 @@
 <template>
   <div class="main-container">
     <div class="application">
-      <p>Добрый день!</p>
       <component :is="currentTab" @response="onCreateUpdate"></component>
       <p v-if="currentTab === 'Created'">{{ childMsg }}</p>
     </div>
     <div class="settings">
-      <select class="settings-applications" @change="changeTab">
+      <select @change="changeTab">
         <option 
           v-for="tab in tabs" 
           :key="tab"
@@ -73,3 +72,21 @@ export default {
   }
 }
 </script>
+
+<style>
+.main-container {
+  height: 50%;
+  width: 50%;
+  display: flex;
+}
+.application {
+  width: 50%;
+  overflow: hidden;
+  background-color: greenyellow;
+}
+.settings {
+  width: 50%;
+  overflow: hidden;
+  background-color: lightseagreen;
+}
+</style>
