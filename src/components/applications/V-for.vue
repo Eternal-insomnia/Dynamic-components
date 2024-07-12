@@ -1,10 +1,12 @@
 <template>
-  <p>V-for здесь!</p>
-  <ul>
-    <li v-for="task in tasks" :key="task.id">
-      {{ task.name }}
-    </li>
-  </ul>
+  <div class="vfor-application">
+    <p>V-for здесь!</p>
+    <ul>
+      <li v-for="task in tasks" :key="task.id">
+        {{ task.name }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>

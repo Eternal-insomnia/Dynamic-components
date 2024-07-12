@@ -1,6 +1,9 @@
 <template>
-  <p>Data здесь!</p><br>
-  {{ message }}
+  <div class="data-application">
+    <p>Data здесь!</p>
+    {{ message }}
+  </div>
+  
 </template>
 
 <script>

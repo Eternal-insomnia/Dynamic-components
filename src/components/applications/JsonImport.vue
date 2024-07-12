@@ -1,11 +1,13 @@
 <template>
-  <p>JSON import здесь!</p><br>
-  <p>Импортированный JSON-файл:</p><br>
-  <ul>
-    <li v-for="task in taskList">
-      {{ task.id }}, {{ task.taskName }}, {{ task.completed }}
-    </li>
-  </ul>
+  <div class="json-import-application">
+    <p>JSON import здесь!</p>
+    <p>Импортированный JSON-файл:</p>
+    <ul>
+      <li v-for="task in taskList">
+        {{ task.id }}, {{ task.taskName }}, {{ task.completed }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>

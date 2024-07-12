@@ -1,6 +1,8 @@
 <template>
-  <p>Mounted здесь!</p><br>
-  <p ref="pElementRef">Не смонтировано</p>
+  <div class="mounted-application">
+    <p>Mounted здесь!</p>
+    <p ref="pElementRef">Не смонтировано</p>
+  </div>
 </template>
 
 <script>

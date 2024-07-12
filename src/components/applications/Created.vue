@@ -1,5 +1,7 @@
 <template>
-  <p>Created здесь!</p>
+  <div class="created-application">
+    <p>Created здесь!</p>
+  </div>
 </template>
 
 <script>

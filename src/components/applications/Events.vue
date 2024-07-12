@@ -1,50 +1,47 @@
 <template>
-  <p>Events здесь!</p><br>
+  <div class="events-apllication">
+    <p>Events здесь!</p>
+    <div class="events-application-event">
+      <p>Ваше число:</p>
+      <p>{{ number }}</p>
+      <button @click="increment()">Увеличить</button>
+      <button @click="number--">Уменьшить</button>
+      <p @click="number=0">Сбросить
+        <span @click.stop="">число</span>
+      </p>
+    </div>
 
-  <!-- @CLICK -->
-  <p>Ваше число:</p>
-  <p>{{ number }}</p>
-  <button @click="increment()">Увеличить</button>
-  <button @click="number--">Уменьшить</button>
-  <p @click="number=0">Сбросить
-    <span @click.stop="">число</span>
-  </p>
+    <div class="events-application-event">
+      <input @input="(event) => message = event.target.value" placeholder="Введите что-нибудь">
+      <p v-if="message==''">Тут пусто...</p>
+      <p v-else>{{ message }}</p>
+    </div>
 
-  <br><br>
-  
-  <!-- @INPUT -->
-  <input @input="(event) => message = event.target.value" placeholder="Введите что-нибудь"><br>
-  <p v-if="message==''">Тут пусто...</p>
-  <p v-else>{{ message }}</p>
-  
-  <br><br>
-  
-  <!-- @CHANGE -->
-  <select @change="selected">
-    <option value="" selected disabled>Выберите</option>
-    <option value="A">A</option>
-    <option value="B">B</option>
-    <option value="C">C</option>
-  </select><br>
-  <p>Ваш выбор: {{ choice }}</p>
+    <div class="events-application-event">
+      <select @change="selected">
+        <option value="" selected disabled>Выберите</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+      <p>Ваш выбор: {{ choice }}</p>
+    </div>
 
-  <br><br>
+    <div class="events-application-event">
+      <p :class="keyDownClass">Введите текст и нажмите Enter</p>
+      <input @keydown.enter="enterKeyDown">
+    </div>
 
-  <!-- @KEYDOWN -->
-  <p :class="keyDownClass">Введите текст и нажмите Enter</p><br>
-  <input @keydown.enter="enterKeyDown">
-  
-  <br><br>
+    <div class="events-application-event">
+      <p>Вы можете вставить сюда текст из буфера обмена:</p>
+      <textarea @paste="onPaste"></textarea>
+      <p>{{ pastedText }}</p>
+    </div>
 
-  <!-- @PASTE -->
-  <p>Вы можете вставить сюда текст из буфера обмена:</p><br>
-  <textarea @paste="onPaste"></textarea><br>
-  <p>{{ pastedText }}</p>
-
-  <br><br>
-
-  <!-- @MOUSEOVER and @MOUSELEAVE-->
-  <p :class="coolTextClass" @mouseover="coolTextChange" @mouseleave="coolTextChange">{{ coolText }}</p>
+    <div class="events-application-event">
+      <p :class="coolTextClass" @mouseover="coolTextChange" @mouseleave="coolTextChange">{{ coolText }}</p>
+    </div>
+  </div>
 </template>
 
 <script>

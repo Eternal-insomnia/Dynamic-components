@@ -1,8 +1,10 @@
 <template>
-  <p>V-model здесь!</p><br>
-  <input v-model="message" placeholder="Введите что-нибудь"><br>
-  <p>Ваше "что-нибудь":</p><br>
-  <p>{{ message }}</p>
+  <div class="vmodel-application">
+    <p>V-model здесь!</p>
+    <input v-model="message" placeholder="Введите что-нибудь">
+    <p>Ваше "что-нибудь":</p>
+    <p>{{ message }}</p>
+  </div>
 </template>
 
 <script>

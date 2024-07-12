@@ -1,10 +1,12 @@
 <template>
-  <p>Methods здесь!</p><br>
-  <input v-model="message" placeholder="Введите что-нибудь"><br>
-  <p>Ваше "что-нибудь":</p><br>
-  <p v-if="message==''" style="color: #bbb;">Вы ничего не написали</p>
-  <p v-else>{{ message }}</p><br>
-  <button @click="reverseMsg">Перевернуть "что-нибудь"</button>
+  <div class="methods-application">
+    <p>Methods здесь!</p>
+    <input v-model="message" placeholder="Введите что-нибудь">
+    <p>Ваше "что-нибудь":</p>
+    <p v-if="message==''">Вы ничего не написали</p>
+    <p v-else>{{ message }}</p>
+    <button @click="reverseMsg">Перевернуть "что-нибудь"</button>
+  </div>
 </template>
 
 <script>

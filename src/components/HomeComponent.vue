@@ -57,8 +57,8 @@ export default {
       childMsg: "Ничего не получено от дочернего компонента",
       currentTab: "Computed",
       tabs: [
-        "Computed", "Created", "CustomSelect", "Data", "Events", "JsonImport", "Methods", "Mounted", "TodoList", 
-        "Vfor", "Vif", "Vmodel", "Vshow", "Watch"
+        "Computed", "Created", "CustomSelect", "Data", "Events", "JsonImport", "Methods", 
+        "Mounted", "TodoList", "Vfor", "Vif", "Vmodel", "Vshow", "Watch"
       ]
     }
   },

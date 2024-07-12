@@ -1,6 +1,6 @@
 <template>
-  <p>CustomSelect здесь!</p><br>
-  <div style="display:unset; cursor: pointer;">
+  <div class="custom-select-application">
+    <p>CustomSelect здесь!</p>
     <div 
       class="choice" 
       :class="{ selected: !itemsHide }" 
@@ -45,6 +45,10 @@ export default {
   font-size: 20px;
   padding-left: 10px;
   height: 100px;
+}
+.custom-selection-application {
+  display:unset; 
+  cursor: pointer;
 }
 .hide {
   display: none;

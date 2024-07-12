@@ -1,8 +1,10 @@
 <template>
-  <p>V-show здесь!</p><br>
-  <p v-show="msg">Удали меня!</p><br>
-  <button v-if="msg" @click="toggle">Удалить</button>
-  <button v-else @click="toggle">Вернуть</button>
+  <div class="vshow-application">
+    <p>V-show здесь!</p>
+    <p v-show="msg">Удали меня!</p>
+    <button v-if="msg" @click="toggle">Удалить</button>
+    <button v-else @click="toggle">Вернуть</button>
+  </div>
 </template>
 
 <script>
