@@ -1,92 +1,15 @@
 <template>
-  <div>
-    <p>Добрый день!</p>
-    <!-- <component 
-      v-if="currentTab==='Created'" 
-      @response="onCreateUpdate(msg)"
-    >
-      {{ childMsg }}
-    </component> -->
-    <component :is="currentTab"></component>
+  <div class="application-container">
+    <HomeComponent/>
   </div>
-  <div>
-    <select @change="changeTab">
-      <option 
-        v-for="tab in tabs" 
-        :key="tab"
-        :value="tab"
-      >
-        {{ tab }}
-      </option>
-    </select>
-  </div>
-  <!-- <Computed/> -->
-  <!-- <Created @response="(msg) => childMsg = msg"/>
-  <p>{{ childMsg }}</p> -->
-  <!-- <CustomSelect/> -->
-  <!-- <Data/> -->
-  <!-- <Events/> -->
-  <!-- <JsonImport/> -->
-  <!-- <Methods/> -->
-  <!-- <Mounted/> -->
-  <!-- <TodoList/> -->
-  <!-- <Vfor/> -->
-  <!-- <Vif/> -->
-  <!-- <Vmodel/> -->
-  <!-- <Vshow/> -->
-  <!-- <Watch/> -->
 </template>
 
 <script>
-import Computed from "./components/Computed.vue"
-import Created from "./components/Created.vue"
-import CustomSelect from "./components/CustomSelection.vue"
-import Data from "./components/Data.vue"
-import Events from "./components/Events.vue" 
-import JsonImport from "./components/JsonImport.vue"
-import Methods from "./components/Methods.vue"
-import Mounted from "./components/Mounted.vue"
-import TodoList from "./components/TodoList.vue"
-import Vfor from "./components/V-for.vue"
-import Vif from "./components/V-if.vue"
-import Vmodel from "./components/V-model.vue"
-import Vshow from "./components/V-show.vue"
-import Watch from "./components/Watch.vue"
+import HomeComponent from "./components/HomeComponent.vue"
 
 export default {
   components: {
-    Computed,
-    Created,
-    CustomSelect,
-    Data,
-    Events,
-    JsonImport,
-    Methods,
-    Mounted,
-    TodoList,
-    Vfor,
-    Vif,
-    Vmodel,
-    Vshow,
-    Watch
-  },
-  data() {
-    return {
-      childMsg: "susogus",
-      currentTab: "Computed",
-      tabs: [
-        "Computed", "Created", "CustomSelect", "Data", "Events", "JsonImport", "Methods", "Mounted", "TodoList", 
-        "Vfor", "Vif", "Vmodel", "Vshow", "Watch"
-      ]
-    }
-  },
-  methods: {
-    changeTab(event) {
-      this.currentTab = event.target.value
-    },
-    onCreateUpdate(msg) {
-      this.childMsg = msg
-    }
+    HomeComponent
   }
 }
 </script>

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import tasks from "./json/tasks.json"
+import tasks from "@/data/json/tasks.json"
 
 export default {
   data() {
