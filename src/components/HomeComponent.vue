@@ -86,7 +86,7 @@ export default {
   justify-content: center;
   width: 50%;
   overflow: hidden;
-  background-color: greenyellow;
+  background-color: rgb(221, 255, 170);
 }
 .settings {
   width: 50%;
@@ -94,6 +94,6 @@ export default {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: lightseagreen;
+  background-color: rgb(163, 212, 166);
 }
 </style>

@@ -10,8 +10,8 @@
         <button @click="increment()">+</button>
         <button @click="number--">-</button>
       </div>
-      <p @click="number=0">Сбросить
-        <span @click.stop="">число</span>
+      <p class="reset" @click="number=0">Сбросить
+        <span class="reset-stop"@click.stop="">число</span>
       </p>
     </div>
 
@@ -87,14 +87,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+button {
+  width: 30%;
+}
 .count-buttons {
   width: 75%;
   display: flex;
   justify-content: space-around;
-}
-.count-buttons button {
-  width: 30%;
 }
 .events-application {
   height: 100%;
@@ -105,22 +105,23 @@ export default {
   overflow-y: scroll; 
 }
 .events-application-event {
-  width: 99%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5px;
-  border: 1px, solid, #000;
+  border: 1px, solid, #65951e;
 }
 .header {
   width: 100%;
   text-align: center;
   border-bottom: solid;
+  border-color: #65951e;
   border-bottom-width: 1px;
 }
 .keyDown {
   color: #006700;
-  background: #adff2f;
+  background: #96dc2d;
 }
 .mouseOver {
   color: #ff0000;
@@ -129,5 +130,11 @@ export default {
 .mouseLeave {
   color: #00aeff;
   background: #004167;
+}
+.reset {
+  cursor: pointer;
+}
+.reset-stop {
+  cursor: default;
 }
 </style>

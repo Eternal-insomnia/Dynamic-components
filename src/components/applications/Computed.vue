@@ -6,7 +6,7 @@
       <li class="book" v-for="book in filteredLibrary">
         <input type="checkbox" v-model="book.done">
         <span>{{ book.name }}, {{ book.author }}</span>
-        <button @click="removeBook(book)">X</button>
+        <button class="delete-button" @click="removeBook(book)">X</button>
       </li>
     </ul>
     <button @click="hideRead = !hideRead">
@@ -79,5 +79,10 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.delete-button {
+  border-color: #9a1010;
+  background-color: #ffa2b5;
+  color: #9a1010;
 }
 </style>

@@ -21,7 +21,12 @@ body,
   height: 100%;
   width: 100%;
 }
-
+button {
+  border: solid;
+  border-color: #65951e;
+  border-radius: 1rem;
+  background-color: #96dc2d;
+}
 .application-container {
   height: 100%;
   width: 100%;

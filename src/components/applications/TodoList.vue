@@ -1,7 +1,7 @@
 <template>
   <div class="todo-list-application">
     <p>TodoList здесь!</p>
-    <div>
+    <div class="new-todo">
       <input v-model="newTodo" @input="regexTest" placeholder="Задание из двух слов">
       <button v-if="nameMatches" @click="addTodo">Добавить задание</button>
       <button v-else disabled>Добавить задание</button>
@@ -51,6 +51,16 @@ export default {
 </script>
 
 <style>
+button:disabled {
+  border: solid;
+  border-color: #aaa;
+  border-radius: 1rem;
+  background-color: #eee;
+}
+.new-todo {
+  display: flex;
+  justify-content: space-between;
+}
 .todo-list-application {
   height: 100%;
   width: 100%;

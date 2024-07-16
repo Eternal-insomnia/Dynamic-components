@@ -7,17 +7,17 @@
       @click="itemsHide = !itemsHide"
       :style="{ backgroundImage: `url(/src/assets/images/${choice}.jpg)`, backgroundSize: `100% 100%`}"
     >
-      {{ choice }}
+      <span class="item-number">{{ choice }}</span>
     </div>
     <div class="items-list" :class="{ hide: itemsHide }">
       <div 
-        class="items" 
+        class="item" 
         :class="{ hide: itemsHide }" 
         @click="optionSelect(option)" 
         v-for="option in options"
         :style="{ backgroundImage: `url(/src/assets/images/${option}.jpg)`, backgroundSize: `100% 100%` }"
       >
-        {{ option }}
+        <span class="item-number">{{ option }}</span>
       </div>
     </div>
   </div>
@@ -45,25 +45,41 @@ export default {
 .choice {
   color: #ffa023;
   font-size: 20px;
-  padding-left: 10px;
   height: 100px;
+  width: 100%;
 }
-.custom-selection-application {
+.choice:hover {
+  cursor: pointer;
+  border: 2px, solid, #ccc;
+}
+.custom-select-application {
+  height: 100%;
+  width: 150px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  align-items: center;
 }
 .hide {
   display: none;
 }
-.items {
+.item {
   color: #ffa023;
   font-size: 20px;
-  padding-left: 10px;
   height: 100px;
+  width: 100%;
+}
+.item:hover {
+  cursor: pointer;
+  border: 2px, solid, #ccc;
+}
+.item-number {
+  padding-left: 10px;
 }
 .items-list {
   height: 200px;
+  width: 100%;
   overflow-y: scroll;
+  border: 2px, solid, #ccc;
 }
 .selected {
   border: 2px, solid, #ccc;
