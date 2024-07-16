@@ -1,11 +1,15 @@
 <template>
-  <div class="events-apllication">
-    <p>Events здесь!</p>
+  <div class="events-application">
+    <div class="header">
+      <p>Events здесь!</p>
+    </div>
     <div class="events-application-event">
       <p>Ваше число:</p>
       <p>{{ number }}</p>
-      <button @click="increment()">Увеличить</button>
-      <button @click="number--">Уменьшить</button>
+      <div class="count-buttons">
+        <button @click="increment()">+</button>
+        <button @click="number--">-</button>
+      </div>
       <p @click="number=0">Сбросить
         <span @click.stop="">число</span>
       </p>
@@ -33,7 +37,7 @@
     </div>
 
     <div class="events-application-event">
-      <p>Вы можете вставить сюда текст из буфера обмена:</p>
+      <p>Вы можете скопировать сюда текст:</p>
       <textarea @paste="onPaste"></textarea>
       <p>{{ pastedText }}</p>
     </div>
@@ -83,12 +87,41 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.count-buttons {
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+}
+.count-buttons button {
+  width: 30%;
+}
+.events-application {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll; 
+}
+.events-application-event {
+  width: 99%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  border: 1px, solid, #000;
+}
+.header {
+  width: 100%;
+  text-align: center;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+}
 .keyDown {
   color: #006700;
   background: #adff2f;
 }
-
 .mouseOver {
   color: #ff0000;
   background: #651b1b;

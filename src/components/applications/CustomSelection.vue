@@ -9,14 +9,16 @@
     >
       {{ choice }}
     </div>
-    <div 
-      class="items" 
-      :class="{ hide: itemsHide }" 
-      @click="optionSelect(option)" 
-      v-for="option in options"
-      :style="{ backgroundImage: `url(/src/assets/images/${option}.jpg)`, backgroundSize: `100% 100%` }"
-    >
-      {{ option }}
+    <div class="items-list" :class="{ hide: itemsHide }">
+      <div 
+        class="items" 
+        :class="{ hide: itemsHide }" 
+        @click="optionSelect(option)" 
+        v-for="option in options"
+        :style="{ backgroundImage: `url(/src/assets/images/${option}.jpg)`, backgroundSize: `100% 100%` }"
+      >
+        {{ option }}
+      </div>
     </div>
   </div>
 </template>
@@ -47,8 +49,8 @@ export default {
   height: 100px;
 }
 .custom-selection-application {
-  display:unset; 
-  cursor: pointer;
+  display: flex;
+  flex-direction: column; 
 }
 .hide {
   display: none;
@@ -58,6 +60,10 @@ export default {
   font-size: 20px;
   padding-left: 10px;
   height: 100px;
+}
+.items-list {
+  height: 200px;
+  overflow-y: scroll;
 }
 .selected {
   border: 2px, solid, #ccc;

@@ -80,12 +80,19 @@ export default {
   display: flex;
 }
 .application {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 50%;
   overflow: hidden;
   background-color: greenyellow;
 }
 .settings {
   width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   background-color: lightseagreen;
 }
