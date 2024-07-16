@@ -1,9 +1,11 @@
 <template>
   <div class="todo-list-application">
     <p>TodoList здесь!</p>
-    <input v-model="newTodo" @input="regexTest" placeholder="Задание из двух слов">
-    <button v-if="nameMatches" @click="addTodo">Добавить задание</button>
-    <button v-else disabled>Добавить задание</button>
+    <div>
+      <input v-model="newTodo" @input="regexTest" placeholder="Задание из двух слов">
+      <button v-if="nameMatches" @click="addTodo">Добавить задание</button>
+      <button v-else disabled>Добавить задание</button>
+    </div>
     <ul>
       <li v-for="todo in todos" :key="todo.id">
         {{ todo.task }}
@@ -47,3 +49,14 @@ export default {
   }
 }
 </script>
+
+<style>
+.todo-list-application {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+</style>
