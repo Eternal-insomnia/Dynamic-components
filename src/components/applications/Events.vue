@@ -102,7 +102,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: scroll; 
+  overflow-y: auto; 
 }
 .events-application-event {
   width: 100%;

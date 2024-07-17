@@ -17,3 +17,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.created-application {
+  overflow-y: auto;
+}
+</style>

@@ -24,6 +24,7 @@ export default {
   justify-content: center;
   margin-left: 5px;
   margin-right: 5px;
+  overflow-y: auto; 
 }
 .quote {
   text-align: center;

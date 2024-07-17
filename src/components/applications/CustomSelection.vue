@@ -46,7 +46,7 @@ export default {
   color: #ffa023;
   font-size: 20px;
   height: 100px;
-  width: 100%;
+  width: 150px;
 }
 .choice:hover {
   cursor: pointer;
@@ -54,10 +54,12 @@ export default {
 }
 .custom-select-application {
   height: 100%;
-  width: 150px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .hide {
   display: none;
@@ -66,7 +68,7 @@ export default {
   color: #ffa023;
   font-size: 20px;
   height: 100px;
-  width: 100%;
+  width: 150px;
 }
 .item:hover {
   cursor: pointer;
@@ -77,9 +79,10 @@ export default {
 }
 .items-list {
   height: 200px;
-  width: 100%;
+  width: 150px;
   overflow-y: scroll;
   border: 2px, solid, #ccc;
+  overflow-x: hidden;
 }
 .selected {
   border: 2px, solid, #ccc;

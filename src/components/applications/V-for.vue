@@ -23,3 +23,9 @@
     }
   }
 </script>
+
+<style>
+.vfor-application {
+  overflow-y: auto;
+}
+</style>

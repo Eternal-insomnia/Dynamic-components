@@ -35,6 +35,7 @@ export default {
       });
       this.todos.push({id: id++, task: this.newTodo})
       this.newTodo = ""
+      this.nameMatches = false
     },
     regexTest() {
       if (re.test(this.newTodo)) { 
@@ -62,11 +63,12 @@ button:disabled {
   justify-content: space-between;
 }
 .todo-list-application {
-  height: 100%;
+
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
 }
 </style>

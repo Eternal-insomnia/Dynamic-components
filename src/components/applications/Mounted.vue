@@ -12,3 +12,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.mounted-application {
+  overflow-y: auto;
+}
+</style>

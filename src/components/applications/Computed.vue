@@ -79,10 +79,13 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
 }
 .delete-button {
   border-color: #9a1010;
   background-color: #ffa2b5;
   color: #9a1010;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 </style>
