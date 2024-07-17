@@ -51,7 +51,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 button:disabled {
   border: solid;
   border-color: #aaa;
@@ -63,7 +63,7 @@ button:disabled {
   justify-content: space-between;
 }
 .todo-list-application {
-
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;

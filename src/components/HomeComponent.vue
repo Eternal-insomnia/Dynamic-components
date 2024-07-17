@@ -1,33 +1,48 @@
 <template>
   <div class="main-container" :class="fontSize + ' ' + fontFamily + ' ' + theme">
-    <div class="application">
+    <div class="start-application-page" :class="{ hide: !applicationHide }" @click="applicationHide = !applicationHide">
+      <img src="@/assets/svg/application-icon.svg" height="128px" width="128px"/>
+    </div>
+    <div class="application" :class="{ hide: applicationHide }">
+      <button class="go-back-app" @click="applicationHide = !applicationHide">
+        <img src="@/assets/svg/go-back-icon.svg" height="20px" width="20px"/>
+      </button>
       <component :is="currentTab" @response="onCreateUpdate"></component>
       <p v-if="currentTab === 'Created'">{{ childMsg }}</p>
     </div>
-    <div class="settings">
-      <select @change="changeTheme">
-        <option value="green-theme">Зелёная тема</option>
-        <option value="yellow-theme">Жёлтая тема</option>
-      </select>
-      <select @change="changeFontSize">
-        <option value="large-font-size">Большой шрифт</option>
-        <option value="default-font-size" selected>Стандартный шрифт</option>
-        <option value="small-font-size">Маленький шрифт</option>
-      </select>
-      <select @change="changeFontFamily">
-        <option class="times-font-family" value="times-font-family" selected>Times New Roman</option>
-        <option class="courier-font-family" value="courier-font-family">Courier New</option>
-        <option class="lucida-font-family" value="lucida-font-family">Lucida Sans</option>
-      </select>
-      <select @change="changeTab">
-        <option 
-          v-for="tab in tabs" 
-          :key="tab"
-          :value="tab"
-        >
-          {{ tab }}
-        </option>
-      </select>
+
+    <div class="start-settings-page" :class="{ hide: !settingsHide }" @click="settingsHide = !settingsHide">
+      <img src="@/assets/svg/settings-icon.svg" height="128px" width="128px"/>
+    </div>
+    <div class="settings" :class="{ hide: settingsHide }">
+      <button class="go-back-set" @click="settingsHide = !settingsHide">
+        <img src="@/assets/svg/go-back-icon.svg" height="20px" width="20px"/>
+      </button>
+      <div class="options">
+        <select @change="changeTheme">
+          <option value="green-theme">Зелёная тема</option>
+          <option value="yellow-theme">Жёлтая тема</option>
+        </select>
+        <select @change="changeFontSize">
+          <option value="large-font-size">Большой шрифт</option>
+          <option value="default-font-size" selected>Стандартный шрифт</option>
+          <option value="small-font-size">Маленький шрифт</option>
+        </select>
+        <select @change="changeFontFamily">
+          <option class="times-font-family" value="times-font-family" selected>Times New Roman</option>
+          <option class="courier-font-family" value="courier-font-family">Courier New</option>
+          <option class="lucida-font-family" value="lucida-font-family">Lucida Sans</option>
+        </select>
+        <select @change="changeTab">
+          <option 
+            v-for="tab in tabs" 
+            :key="tab"
+            :value="tab"
+          >
+            {{ tab }}
+          </option>
+        </select>
+      </div>
     </div>
   </div>
 </template>
@@ -67,10 +82,12 @@ export default {
   },
   data() {
     return {
+      applicationHide: true,
       childMsg: "Ничего не получено от дочернего компонента",
       currentTab: "Computed",
       fontFamily: "times-font-family",
       fontSize: "default-font",
+      settingsHide: true,
       tabs: [
         "Computed", "Created", "CustomSelect", "Data", "Events", "JsonImport", "Methods", 
         "Mounted", "TodoList", "Vfor", "Vif", "Vmodel", "Vshow", "Watch"
@@ -113,6 +130,14 @@ select {
   width: 50%;
   display: flex;
 }
+.start-application-page {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
 .application {
   width: 50%;
   display: flex;
@@ -121,13 +146,28 @@ select {
   justify-content: center;
   overflow: hidden;
 }
+.start-settings-page {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
 .settings {
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   overflow: hidden;
+}
+.options {
+  height: 100%;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .large-font-size {
   font-size: large;
@@ -151,20 +191,33 @@ select {
   border-color: #65951e;
   background-color: #96dc2d;
 }
-.green-theme .application {
+.green-theme .application, .green-theme .start-application-page {
   background-color: #dfa;
 }
-.green-theme .settings {
+.green-theme .settings, .green-theme .start-settings-page {
   background-color: #a3d4a6;
 }
 .yellow-theme button, .yellow-theme select {
   border-color: #b29f15;
   background-color: #fff30f;
 }
-.yellow-theme .application {
+.yellow-theme .application, .yellow-theme .start-application-page {
   background-color: #fffeaa;
 }
-.yellow-theme .settings {
+.yellow-theme .settings, .yellow-theme .start-settings-page {
   background-color: #e8e9a5;
+}
+.go-back-app {
+  position: relative;
+  margin-top: 20px;
+  margin-right: 80%;
+}
+.go-back-set {
+  position: relative;
+  margin-top: 20px;
+  margin-right: 80%;
+}
+.hide {
+  display: none;
 }
 </style>

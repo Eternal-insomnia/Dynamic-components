@@ -61,9 +61,6 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
 }
-.hide {
-  display: none;
-}
 .item {
   color: #ffa023;
   font-size: 20px;
@@ -86,5 +83,8 @@ export default {
 }
 .selected {
   border: 2px, solid, #ccc;
+}
+.hide {
+  display: none;
 }
 </style>
