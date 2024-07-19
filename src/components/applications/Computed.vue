@@ -68,7 +68,7 @@ export default {
   align-items: center;
 }
 .book-list {
-  width: 100%;
+  width: 80%;
   padding-left: 0px;
   list-style-type: none;
 }

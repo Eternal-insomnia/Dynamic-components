@@ -1,15 +1,17 @@
 <template>
   <div class="application-container">
-    <HomeComponent/>
+    <TestComponent/>
   </div>
 </template>
 
 <script>
 import HomeComponent from "./components/HomeComponent.vue"
+import TestComponent from "./test/TestComponent.vue";
 
 export default {
   components: {
-    HomeComponent
+    HomeComponent,
+    TestComponent
   }
 }
 </script>
@@ -17,10 +19,7 @@ export default {
 <style>
 html,
 body,
-#app {
-  height: 100%;
-  width: 100%;
-}
+#app,
 .application-container {
   height: 100%;
   width: 100%;
