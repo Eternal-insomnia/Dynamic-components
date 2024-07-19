@@ -1,15 +1,17 @@
 <template>
 	<p>{{ count }}</p>
+	<button @click="increment">add</button>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   computed: {
-		...mapState([
-			'count'
-		])
+		...mapState(['count'])
+	},
+	methods: {
+		...mapMutations(['increment'])
 	}
 }
 </script>
