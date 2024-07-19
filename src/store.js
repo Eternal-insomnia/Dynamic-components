@@ -3,12 +3,12 @@ import { createStore } from 'vuex'
 export const store = createStore({
     state(){
         return{
-            count: 0
+            currentTab: 'Computed'
         }
     },
     mutations:{
-        increment(state) {
-            state.count++
+        changeTab(state, event) {
+            state.currentTab = event.target.value
         }
     }
 })

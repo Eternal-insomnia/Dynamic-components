@@ -1,6 +1,7 @@
 <template>
   <div class="application-container">
-    <TestComponent/>
+    <HomeComponent/>
+    <!-- <TestComponent/> -->
   </div>
 </template>
 

@@ -64,6 +64,8 @@ import Vmodel from "./applications/V-model.vue"
 import Vshow from "./applications/V-show.vue"
 import Watch from "./applications/Watch.vue"
 
+import { mapState, mapMutations } from 'vuex'
+
 export default {
   components: {
     Computed,
@@ -85,7 +87,6 @@ export default {
     return {
       applicationHide: true,
       childMsg: "Ничего не получено от дочернего компонента",
-      currentTab: "Computed",
       fontFamily: "times-font-family",
       fontSize: "default-font",
       settingsHide: true,
@@ -103,16 +104,17 @@ export default {
     changeFontSize(event) {
       this.fontSize = event.target.value
     },
-    changeTab(event) {
-      this.currentTab = event.target.value
-    },
     changeTheme(event) {
       this.theme = event.target.value
     },
     onCreateUpdate(msg) {
       console.log("test-log", msg);
       this.childMsg = msg
-    }
+    },
+    ...mapMutations(['changeTab'])
+  },
+  computed: {
+    ...mapState(['currentTab'])
   }
 }
 </script>
