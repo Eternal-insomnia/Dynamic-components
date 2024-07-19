@@ -3,6 +3,7 @@
     <div class="start-application-page" :class="{ hide: !applicationHide }" @click="applicationHide = !applicationHide">
       <img src="@/assets/svg/application-icon.svg" height="128px" width="128px"/>
     </div>
+
     <div class="application" :class="{ hide: applicationHide }">
       <button class="go-back-app" @click="applicationHide = !applicationHide">
         <img src="@/assets/svg/go-back-icon.svg" height="20px" width="20px"/>
@@ -14,24 +15,25 @@
     <div class="start-settings-page" :class="{ hide: !settingsHide }" @click="settingsHide = !settingsHide">
       <img src="@/assets/svg/settings-icon.svg" height="128px" width="128px"/>
     </div>
+
     <div class="settings" :class="{ hide: settingsHide }">
       <button class="go-back-set" @click="settingsHide = !settingsHide">
         <img src="@/assets/svg/go-back-icon.svg" height="20px" width="20px"/>
       </button>
       <div class="options">
         <select @change="changeTheme">
-          <option value="green-theme">Зелёная тема</option>
-          <option value="yellow-theme">Жёлтая тема</option>
+          <option value="green-theme">{{ localeComponent.theme.green }}</option>
+          <option value="yellow-theme">{{ localeComponent.theme.yellow }}</option>
         </select>
         <select @change="changeFontSize">
-          <option value="large-font-size">Большой шрифт</option>
-          <option value="default-font-size" selected>Стандартный шрифт</option>
-          <option value="small-font-size">Маленький шрифт</option>
+          <option value="large-font-size">{{ localeComponent.fontSize.large }}</option>
+          <option value="default-font-size" selected>{{ localeComponent.fontSize.default }}</option>
+          <option value="small-font-size">{{ localeComponent.fontSize.small }}</option>
         </select>
         <select @change="changeFontFamily">
-          <option class="times-font-family" value="times-font-family" selected>Times New Roman</option>
-          <option class="courier-font-family" value="courier-font-family">Courier New</option>
-          <option class="lucida-font-family" value="lucida-font-family">Lucida Sans</option>
+          <option class="times-font-family" value="times-font-family" selected>{{ localeComponent.fontFamily.times }}</option>
+          <option class="courier-font-family" value="courier-font-family">{{ localeComponent.fontFamily.courier }}</option>
+          <option class="lucida-font-family" value="lucida-font-family">{{ localeComponent.fontFamily.lucida }}</option>
         </select>
         <select @change="changeLang">
           <option value="RU">Русский</option>
@@ -39,11 +41,11 @@
         </select>
         <select @change="changeTab">
           <option 
-            v-for="tab in tabs" 
-            :key="tab"
+            v-for="(tab, i) in tabs" 
+            :key="i"
             :value="tab"
           >
-            {{ tab }}
+            {{ localeComponent.components[i] }}
           </option>
         </select>
       </div>
@@ -69,6 +71,7 @@ import Watch from "./applications/Watch.vue"
 
 import { mapState, mapMutations } from 'vuex'
 
+let i = 0;
 export default {
   components: {
     Computed,
@@ -117,7 +120,10 @@ export default {
     ...mapMutations(['changeTab', 'changeLang'])
   },
   computed: {
-    ...mapState(['currentTab'])
+    ...mapState(['currentTab', 'locale']),
+    localeComponent() {
+      return this.locale.settings
+    }
   }
 }
 </script>

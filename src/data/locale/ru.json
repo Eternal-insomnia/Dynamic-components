@@ -81,5 +81,23 @@
     }
   },
   "settings": {
+    "theme": {
+      "green": "Зелёная тема",
+      "yellow": "Жёлтая тема"
+    },
+    "fontSize": {
+      "large": "Большой шрифт",
+      "default": "Стандартный шрифт",
+      "small": "Маленький шрифт"
+    },
+    "fontFamily": {
+      "times": "Times New Roman",
+      "courier": "Courier New",
+      "lucida": "Lucida Sans"
+    },
+    "components": [
+      "Computed", "Created", "Пользовательский выбор", "Data", "Events", "Json импорт", "Methods", 
+        "Mounted", "Список дел", "Vfor", "Vif", "Vmodel", "Vshow", "Watch"
+    ]
   }
 }

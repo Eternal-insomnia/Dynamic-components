@@ -81,5 +81,23 @@
       }
     },
     "settings": {
+      "theme": {
+        "green": "Green theme",
+        "yellow": "Yellow theme"
+      },
+      "fontSize": {
+        "large": "Large font",
+        "default": "Default font",
+        "small": "Small font"
+      },
+      "fontFamily": {
+        "times": "Times New Roman",
+        "courier": "Courier New",
+        "lucida": "Lucida Sans"
+      },
+      "components": [
+        "Computed", "Created", "Custom selection", "Data", "Events", "Json import", "Methods", 
+          "Mounted", "ToDo list", "Vfor", "Vif", "Vmodel", "Vshow", "Watch"
+      ]
     }
   }
