@@ -1,0 +1,85 @@
+{
+    "application": {
+      "computed": {
+        "title": "Computed is here!",
+        "yourLibrary": "Your library:",
+        "showBooks": "Show all books",
+        "hideBooks": "Hide read books",
+        "book": "book",
+        "author": "author",
+        "addBook": "Add book"
+      },
+      "created": {
+        "title": "Created is here!"
+      },
+      "customSelection": {
+        "title": "Custom selection"
+      },
+      "data": {
+        "title": "Data is here!",
+        "msg": "If you close your eyes, it gets dark. (c)Jason Statham"
+      },
+      "events": {
+        "title": "Events is here!",
+        "yourNum": "Your number:",
+        "reset": "Reset",
+        "resetStop": "number",
+        "textPlaceholder": "Type something",
+        "ifMessage": "There's nothing here...",
+        "select": "Pick some",
+        "noChoice": "You haven't picked anything.",
+        "choice": "Your choice:",
+        "enterEvent": "Type something and press Enter",
+        "copyEvent": "You can copy something here",
+        "coolTextCalm": "I'm a cool text",
+        "coolTextHover": "NOOOO, DON'T TOUCH"
+      },
+      "jsonImport": {
+        "title": "JSON import is here!",
+        "msg": "Imported JSON:"
+      },
+      "methods": {
+        "title": "Methods is here!",
+        "placeholder": "Type something",
+        "msg": "Your 'something':",
+        "ifMsg": "There's nothing here...",
+        "reverseButton": "Flip 'something'"
+      },
+      "mounted": {
+        "title": "Mounted is here!",
+        "mountCorrect": "Mounted",
+        "mountUncorrect": "Not mounted"
+      },
+      "todoList": {
+        "title": "ToDo list",
+        "placeholder": "Task, two words",
+        "addTask": "Add task"
+      },
+      "vfor": {
+        "title": "V-for is here!"
+      },
+      "vif": {
+        "title": "V-if is here!",
+        "if": "This number is more than five",
+        "else": "This number is less than or equal to five"
+      },
+      "vmodel": {
+        "title": "V-model is here!",
+        "placeholder": "Type something",
+        "msg": "Your 'something':"
+      },
+      "vshow": {
+        "title": "V-show is here!",
+        "msg": "Delete me!",
+        "if": "Delete",
+        "else": "Noooo... Go back"
+      },
+      "watch": {
+        "title": "Watch is here!",
+        "msg": "Type something",
+        "placeholder": "There's nothing here..."
+      }
+    },
+    "settings": {
+    }
+  }

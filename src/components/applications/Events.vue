@@ -54,11 +54,11 @@ import { mapState } from 'vuex';
 export default {
   data() {
     return {
-      choice: "Вы ничего не выбрали.",
+      choice: "",
       coolText: "Я красивый текст",
       coolTextClass: "mouseLeave",
       keyDownClass: "",
-      message: "Тут пусто.",
+      message: "",
       number: 0,
       pastedText: ""
     }
@@ -89,6 +89,8 @@ export default {
   computed: {
     ...mapState(['locale']),
     localeComponent() {
+      this.choice = this.locale.application.events.noChoice
+      this.message = this.locale.application.events.ifMessage
       return this.locale.application.events
     }
   }

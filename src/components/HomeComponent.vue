@@ -33,6 +33,10 @@
           <option class="courier-font-family" value="courier-font-family">Courier New</option>
           <option class="lucida-font-family" value="lucida-font-family">Lucida Sans</option>
         </select>
+        <select @change="changeLang">
+          <option value="RU">Русский</option>
+          <option value="EN">English</option>
+        </select>
         <select @change="changeTab">
           <option 
             v-for="tab in tabs" 
@@ -110,7 +114,7 @@ export default {
       console.log("test-log", msg);
       this.childMsg = msg
     },
-    ...mapMutations(['changeTab'])
+    ...mapMutations(['changeTab', 'changeLang'])
   },
   computed: {
     ...mapState(['currentTab'])
