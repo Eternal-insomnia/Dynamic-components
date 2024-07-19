@@ -1,10 +1,10 @@
 <template>
   <div class="todo-list-application">
-    <p>TodoList здесь!</p>
+    <p>{{ localeComponent.title }}</p>
     <div class="new-todo">
-      <input v-model="newTodo" @input="regexTest" placeholder="Задание из двух слов">
-      <button v-if="nameMatches" @click="addTodo">Добавить задание</button>
-      <button v-else disabled>Добавить задание</button>
+      <input v-model="newTodo" @input="regexTest" :placeholder="localeComponent.placeholder">
+      <button v-if="nameMatches" @click="addTodo">{{ localeComponent.addTask }}</button>
+      <button v-else disabled>{{ localeComponent.addTask }}</button>
     </div>
     <ul>
       <li v-for="todo in todos" :key="todo.id">
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 let id = 0
 const re = new RegExp("^[a-zA-Z]+ [a-zA-Z]+$|^[а-яА-Я]+ [а-яА-Я]+$")
 export default {
@@ -46,6 +48,12 @@ export default {
     },
     removeTodo(todo) {
       this.todos = this.todos.filter((elem) => elem != todo)
+    }
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.todoList
     }
   }
 }

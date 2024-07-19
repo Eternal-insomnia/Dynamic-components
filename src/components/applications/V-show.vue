@@ -1,13 +1,15 @@
 <template>
   <div class="vshow-application">
-    <p>V-show здесь!</p>
-    <p v-show="msg">Удали меня!</p>
-    <button v-if="msg" @click="toggle">Удалить</button>
-    <button v-else @click="toggle">Вернуть</button>
+    <p>{{ localeComponent.title }}</p>
+    <p v-show="msg">{{ localeComponent.msg }}</p>
+    <button v-if="msg" @click="toggle">{{ localeComponent.if }}</button>
+    <button v-else @click="toggle">{{ localeComponent.else }}</button>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
@@ -17,6 +19,12 @@ export default {
   methods: {
     toggle() {
         this.msg = !this.msg
+    }
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.vshow
     }
   }
 }

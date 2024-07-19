@@ -7,9 +7,8 @@
       <button class="go-back-app" @click="applicationHide = !applicationHide">
         <img src="@/assets/svg/go-back-icon.svg" height="20px" width="20px"/>
       </button>
-      <component :is="currentTab" @response="onCreateUpdate">
-        <p v-if="currentTab === 'Created'">{{ childMsg }}</p>
-      </component>
+      <component :is="currentTab" @response="onCreateUpdate"/>
+      <p v-if="currentTab === 'Created'">{{ childMsg }}</p>
     </div>
 
     <div class="start-settings-page" :class="{ hide: !settingsHide }" @click="settingsHide = !settingsHide">

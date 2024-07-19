@@ -1,6 +1,6 @@
 <template>
   <div class="vfor-application">
-    <p>V-for здесь!</p>
+    <p>{{ localeComponent.title }}</p>
     <ul>
       <li v-for="task in tasks" :key="task.id">
         {{ task.name }}
@@ -10,18 +10,26 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        tasks: [
-          {id: 1, name: "Task 1"},
-          {id: 2, name: "Task 2"},
-          {id: 3, name: "Task 3"},
-          {id: 4, name: "Task 4"}
-        ]
-      }
+import { mapState } from 'vuex';
+
+export default {
+  data() {
+    return {
+      tasks: [
+        {id: 1, name: "Task 1"},
+        {id: 2, name: "Task 2"},
+        {id: 3, name: "Task 3"},
+        {id: 4, name: "Task 4"}
+      ]
+    }
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.vfor
     }
   }
+}
 </script>
 
 <style>

@@ -1,7 +1,7 @@
 <template>
   <div class="json-import-application">
-    <p>JSON import здесь!</p>
-    <p>Импортированный JSON-файл:</p>
+    <p>{{ localeComponent.title }}</p>
+    <p>{{ localeComponent.msg }}</p>
     <ul>
       <li v-for="task in taskList">
         {{ task.id }}, {{ task.taskName }}, {{ task.completed }}
@@ -11,12 +11,19 @@
 </template>
 
 <script>
-import tasks from "@/data/json/tasks.json"
+import tasks from "@/data/components_data/tasks.json"
+import { mapState } from "vuex";
 
 export default {
   data() {
     return {
       taskList: tasks
+    }
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.jsonImport
     }
   }
 }

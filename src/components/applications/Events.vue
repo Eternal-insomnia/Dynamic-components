@@ -1,43 +1,43 @@
 <template>
   <div class="events-application">
     <div class="header">
-      <p>Events здесь!</p>
+      <p>{{ localeComponent.title }}</p>
     </div>
     <div class="events-application-event">
-      <p>Ваше число:</p>
+      <p>{{ localeComponent.yourNum }}</p>
       <p>{{ number }}</p>
       <div class="count-buttons">
         <button @click="increment()">+</button>
         <button @click="number--">-</button>
       </div>
-      <p class="reset" @click="number=0">Сбросить
-        <span class="reset-stop"@click.stop="">число</span>
+      <p class="reset" @click="number=0">{{ localeComponent.reset }}
+        <span class="reset-stop"@click.stop="">{{ localeComponent.resetStop }}</span>
       </p>
     </div>
 
     <div class="events-application-event">
-      <input @input="(event) => message = event.target.value" placeholder="Введите что-нибудь">
-      <p v-if="message==''">Тут пусто...</p>
+      <input @input="(event) => message = event.target.value" :placeholder="localeComponent.textPlaceholder">
+      <p v-if="message==''">{{ localeComponent.ifMessage }}</p>
       <p v-else>{{ message }}</p>
     </div>
 
     <div class="events-application-event">
       <select @change="selected">
-        <option value="" selected disabled>Выберите</option>
+        <option value="" selected disabled>{{ localeComponent.select }}</option>
         <option value="A">A</option>
         <option value="B">B</option>
         <option value="C">C</option>
       </select>
-      <p>Ваш выбор: {{ choice }}</p>
+      <p>{{ localeComponent.choice + ' ' + choice }}</p>
     </div>
 
     <div class="events-application-event">
-      <p :class="keyDownClass">Введите текст и нажмите Enter</p>
+      <p :class="keyDownClass">{{ localeComponent.enterEvent }}</p>
       <input @keydown.enter="enterKeyDown">
     </div>
 
     <div class="events-application-event">
-      <p>Вы можете скопировать сюда текст:</p>
+      <p>{{ localeComponent.copyEvent }}</p>
       <textarea @paste="onPaste"></textarea>
       <p>{{ pastedText }}</p>
     </div>
@@ -49,6 +49,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
@@ -65,10 +67,10 @@ export default {
     coolTextChange() {
       if (this.coolTextClass == "mouseLeave") {
         this.coolTextClass = "mouseOver"
-        this.coolText = "НЕЕЕЕЕЕЕТ, НЕ ТРОГАЙ"
+        this.coolText = this.localeComponent.coolTextHover
       } else {
         this.coolTextClass = "mouseLeave"
-        this.coolText = "Я красивый текст"
+        this.coolText = this.localeComponent.coolTextCalm
       }
     },
     enterKeyDown() {
@@ -82,6 +84,12 @@ export default {
     },
     selected(event) {
       this.choice = event.target.value
+    }
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.events
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="computed-application">
-    <p>Computed здесь!</p>
-    <p>Ваша библиотека:</p>
+    <p>{{ localeComponent.title }}</p>
+    <p>{{ localeComponent.yourLibrary }}</p>
     <ul class="book-list">
       <li class="book" v-for="book in filteredLibrary">
         <input type="checkbox" v-model="book.done">
@@ -10,17 +10,19 @@
       </li>
     </ul>
     <button @click="hideRead = !hideRead">
-      {{ hideRead ? 'Показать все книги' : 'Скрыть прочинанные книги' }}
+      {{ hideRead ? localeComponent.showBooks : localeComponent.hideBooks }}
     </button>
     <form class="book-form" @submit.prevent="addBook">
-      <input v-model="bookName" required placeholder="книга"><br>
-      <input v-model="bookAuthor" required placeholder="автор"><br>
-      <button type="submit">Добавить книгу</button>
+      <input v-model="bookName" required :placeholder="localeComponent.book"><br>
+      <input v-model="bookAuthor" required :placeholder="localeComponent.author"><br>
+      <button type="submit">{{ localeComponent.addBook }}</button>
     </form>
   </div>
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex';
+
 export default {
   data() {
     return {
@@ -35,6 +37,10 @@ export default {
     }
   },
   computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.computed
+    },
     filteredLibrary() {
       return this.hideRead
         ? this.library.filter((b) => !b.done)

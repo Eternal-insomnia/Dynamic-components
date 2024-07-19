@@ -1,16 +1,25 @@
 <template>
   <div class="data-application">
-    <p>Data здесь!</p>
+    <p>{{ localeComponent.title }}</p>
     <p class="quote">{{ message }}</p>
   </div>
   
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
-      message: "Если закрыть глаза, становится темно. (с)Джейсон Стетхем"
+      message: 's'
+    }
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      this.message = this.locale.application.data.msg
+      return this.locale.application.data
     }
   }
 }

@@ -1,17 +1,25 @@
 <template>
   <div class="vmodel-application">
-    <p>V-model здесь!</p>
-    <input v-model="message" placeholder="Введите что-нибудь">
-    <p>Ваше "что-нибудь":</p>
+    <p>{{ localeComponent.title }}</p>
+    <input v-model="message" :placeholder="localeComponent.placeholder">
+    <p>{{ localeComponent.msg }}</p>
     <p>{{ message }}</p>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
       message: ""
+    }
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.vmodel
     }
   }
 }

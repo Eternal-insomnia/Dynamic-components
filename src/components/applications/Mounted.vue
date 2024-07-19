@@ -1,14 +1,22 @@
 <template>
   <div class="mounted-application">
-    <p>Mounted здесь!</p>
-    <p ref="pElementRef">Не смонтировано</p>
+    <p>{{ localeComponent.title }}</p>
+    <p ref="pElementRef">{{ localeComponent.mountUncorrect }}</p>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   mounted() {
-    this.$refs.pElementRef.textContent = "Смонтировано"
+    this.$refs.pElementRef.textContent = this.localeComponent.mountCorrect
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.mounted
+    }
   }
 }
 </script>

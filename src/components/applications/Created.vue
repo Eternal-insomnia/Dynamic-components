@@ -1,19 +1,27 @@
 <template>
   <div class="created-application">
-    <p>Created здесь!</p>
+    <p>{{ localeComponent.title }}</p>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
-      msg: "Привет от created!"
+      msg: "Created message"
     }
   },
   emits: ["response"],
   created() {
     this.$emit("response", this.msg)
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.created
+    }
   }
 }
 </script>

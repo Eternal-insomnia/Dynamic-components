@@ -1,13 +1,15 @@
 <template>
   <div class="watch-application">
-    <p>Watch здвесь!</p>
-    <p>Введите слово:</p>
-    <input v-model="message" placeholder="Вы ещё ничего не ввели..."/>
+    <p>{{ localeComponent.title }}</p>
+    <p>{{ localeComponent.msg }}</p>
+    <input v-model="message" :placeholder="localeComponent.placeholder"/>
     <p v-if="message!=''">{{ revMessage }}</p>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
@@ -18,6 +20,12 @@ export default {
   watch: {
     message() {
       this.revMessage = this.message.split('').reverse().join('')
+    }
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.watch
     }
   }
 }

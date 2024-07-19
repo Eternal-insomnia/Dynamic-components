@@ -1,17 +1,25 @@
 <template>
   <div class="vif-application">
-    <p>V-if здесь!</p>
+    <p>{{ localeComponent.title }}</p>
     <input type="number" v-model="num">
-    <p v-if="num > 5">Число больше пяти</p>
-    <p v-else>Число меньше или равно пяти</p>
+    <p v-if="num > 5">{{ localeComponent.if }}</p>
+    <p v-else>{{ localeComponent.else }}</p>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
       num: 0
+    }
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.vif
     }
   }
 }

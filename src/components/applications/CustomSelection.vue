@@ -1,6 +1,6 @@
 <template>
   <div class="custom-select-application">
-    <p>CustomSelect здесь!</p>
+    <p>{{ localeComponent.title }}</p>
     <div 
       class="choice" 
       :class="{ selected: !itemsHide }" 
@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
@@ -36,6 +38,12 @@ export default {
     optionSelect(option) {
       this.choice = option
       this.itemsHide = true
+    }
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.customSelection
     }
   }
 }

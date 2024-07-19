@@ -1,9 +1,12 @@
 import { createStore } from 'vuex'
+import localeRU from "@/data/locale/ru.json"
 
 export const store = createStore({
     state(){
         return{
-            currentTab: 'Computed'
+            currentTab: 'Computed',
+            currentLang: 'RU',
+            locale: localeRU,
         }
     },
     mutations:{

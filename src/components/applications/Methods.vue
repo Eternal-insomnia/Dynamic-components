@@ -1,15 +1,17 @@
 <template>
   <div class="methods-application">
-    <p>Methods здесь!</p>
-    <input v-model="message" placeholder="Введите что-нибудь">
-    <p>Ваше "что-нибудь":</p>
-    <p v-if="message==''">Вы ничего не написали</p>
+    <p>{{ localeComponent.title }}</p>
+    <input v-model="message" :placeholder="localeComponent.placeholder">
+    <p>{{ localeComponent.msg }}</p>
+    <p v-if="message==''">{{ localeComponent.ifMsg }}</p>
     <p v-else>{{ message }}</p>
-    <button @click="reverseMsg">Перевернуть "что-нибудь"</button>
+    <button @click="reverseMsg">{{ localeComponent.reverseButton }}</button>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
@@ -19,6 +21,12 @@ export default {
   methods: {
     reverseMsg() {
       this.message = this.message.split('').reverse().join('')
+    }
+  },
+  computed: {
+    ...mapState(['locale']),
+    localeComponent() {
+      return this.locale.application.methods
     }
   }
 }

@@ -1,0 +1,84 @@
+{
+  "application": {
+    "computed": {
+      "title": "Computed здесь!",
+      "yourLibrary": "Ваша библиотека:",
+      "showBooks": "Показать все книги",
+      "hideBooks": "Скрыть прочитанные книги",
+      "book": "книга",
+      "author": "автор",
+      "addBook": "Добавить книгу"
+    },
+    "created": {
+      "title": "Created здесь!"
+    },
+    "customSelection": {
+      "title": "Пользовательский выбор"
+    },
+    "data": {
+      "title": "Data здесь!",
+      "msg": "Если закрыть глаза, становится темно. (с)Джейсон Стетхем"
+    },
+    "events": {
+      "title": "Events здесь!",
+      "yourNum": "Ваше число:",
+      "reset": "Сбросить",
+      "resetStop": "число",
+      "textPlaceholder": "Введите что-нибудь",
+      "ifMessage": "Тут пусто...",
+      "select": "Выберите",
+      "choice": "Ваш выбор:",
+      "enterEvent": "Введите текст и нажмите Enter",
+      "copyEvent": "Вы можете скопировать сюда текст",
+      "coolTextCalm": "Я красивый текст",
+      "coolTextHover": "НЕЕЕЕЕЕТ, НЕ ТРОГАЙ"
+    },
+    "jsonImport": {
+      "title": "JSON импорт здесь!",
+      "msg": "Импортированный JSON-файл:"
+    },
+    "methods": {
+      "title": "Methods здесь!",
+      "placeholder": "Введите что-нибудь",
+      "msg": "Ваше 'что-нибудь'",
+      "ifMsg": "Вы ничего не написали",
+      "reverseButton": "Перевернуть 'что-нибудь'"
+    },
+    "mounted": {
+      "title": "Mounted здесь!",
+      "mountCorrect": "Смонтировано",
+      "mountUncorrect": "Не смонтировано"
+    },
+    "todoList": {
+      "title": "Список дел",
+      "placeholder": "Задание из двух слов",
+      "addTask": "Добавить задание"
+    },
+    "vfor": {
+      "title": "V-for здесь!"
+    },
+    "vif": {
+      "title": "V-if здесь!",
+      "if": "Число больше пяти",
+      "else": "Число меньше или равно пяти"
+    },
+    "vmodel": {
+      "title": "V-model здесь!",
+      "placeholder": "Введите что-нибудь",
+      "msg": "Ваше 'что-нибудь':"
+    },
+    "vshow": {
+      "title": "V-show здесь!",
+      "msg": "Удали меня!",
+      "if": "Удалить",
+      "else": "Вернуть"
+    },
+    "watch": {
+      "title": "Watch здесь!",
+      "msg": "Введите слово",
+      "placeholder": "Вы ещё ничего не ввели..."
+    }
+  },
+  "settings": {
+  }
+}
