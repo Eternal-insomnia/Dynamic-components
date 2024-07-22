@@ -142,6 +142,27 @@ select {
   width: 50%;
   display: flex;
 }
+@media (max-width: 1050px) {
+  .main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .start-application-page {
+    height: 50%;
+  }
+  .application {
+    height: 50%;
+  }
+  .start-settings-page {
+    height: 50%;
+  }
+  .settings {
+    height: 50%;
+  }
+}
 .start-application-page {
   width: 50%;
   display: flex;
@@ -149,6 +170,25 @@ select {
   justify-content: center;
   overflow: hidden;
   cursor: pointer;
+}
+.start-application-page:hover img {
+  animation-duration: 2s;
+  animation-name: applicationPage;
+  animation-iteration-count: infinite;
+}
+@keyframes applicationPage {
+  from {
+    height: 128px;
+    width: 128px;
+  }
+  50% {
+    height: 160px;
+    width: 160px;
+  }
+  to {
+    height: 128px;
+    width: 128px;
+  }
 }
 .application {
   width: 50%;
@@ -166,13 +206,26 @@ select {
   overflow: hidden;
   cursor: pointer;
 }
+.start-settings-page:hover img {
+  animation-duration: 4s;
+  animation-name: settingsPage;
+  animation-iteration-count: infinite;
+}
+@keyframes settingsPage {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
 .settings {
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-y: auto;
 }
 .options {
   height: 100%;
